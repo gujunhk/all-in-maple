@@ -45,11 +45,11 @@ CI_lower := t -> eval(model, x = t) - t_critical*SE_CI(t):
 CI_upper := t -> eval(model, x = t) + t_critical*SE_CI(t):
 
 # ` 散点图（观测值）`
-p_data := ScatterPlot(X, Y, symbol = cross, symbolsize = 15, color = blue, legend = "观测值"):
+p_data := ScatterPlot(X, Y, symbol = cross, symbolsize = 15, color = blue, legend = "观测值",legendstyle=[font = ["SimSun"]]):
 # ` 回归线`
-p_fit := plot(model, x = min(X) - 0.5 .. max(X) + 0.5, color = red, thickness = 1, legend = "回归线"):
+p_fit := plot(model, x = min(X) - 0.5 .. max(X) + 0.5, color = red, thickness = 1, legend = "回归线",legendstyle=[font = ["SimSun"]]):
 # ` 置信区间（填充区域）`
-CI_band := plot([CI_lower(x), CI_upper(x)], x = min(X) - 0.5 .. max(X) + 0.5, color = [green, green], linestyle = DOT, thickness = 1, legend = ["95% 置信区间", "95% 置信区间"], transparency = 0.05):
+CI_band := plot([CI_lower(x), CI_upper(x)], x = min(X) - 0.5 .. max(X) + 0.5, color = [green, green], linestyle = DOT, thickness = 1, legend = ["95% 置信区间", "95% 置信区间"],legendstyle=[font = ["SimSun"]], transparency = 0.05):
 with(plots):
 # ` 组合图形`
-display(p_data, p_fit, CI_band, title = "一元线性回归与置信区间", labels = ["X", "Y"], axes = boxed);
+display(p_data, p_fit, CI_band, title = "一元线性回归与置信区间",titlefont=["SimSun"], labels = ["X", "Y"], axes = boxed);
