@@ -1,2 +1,4 @@
 # Temp files
 _*.mw
+.DS_Store
+_*.txt
